@@ -1,90 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overscroll-behavior: none;
+  height: 100%;
+}
+
 body {
-	
-	font-family: "Arial" , sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
 }
 
-
-header {
-	margin: 0 auto;
-	max-width: 1200px;
-	padding: 1rem;
-	border-bottom: 2px solid #f8f8f8;
-	margin-bottom: 2rem;
-}
-
-nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	/*margin-top: 1rem;*/
-
-
-}
-
-.logo-container {
-	display: flex;
-	gap: 1rem;
-	align-items: center;
-
+.header {
+  /*Add flex properties here to make header elements aligned horizontally with space in between*/
+  display: flex;
+  justify-content: space-between;
+  background: #2c3e50;
+  color: white;
+  padding: 1.5rem 5%;
+  /*Add position Properties Here to make sure the header sticks to the top of the page on scroll*/
+  position: sticky;
+  z-index: 100;
+  top: 0;
 }
 
 .logo {
-	font-size: 1.5rem;
-	background: red;
-	padding: 1rem 1.5rem;
-	color: white;
-	border-radius: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav ul {
+ /*Add flex properties to align navigation items horizontally*/
+ display: flex;
+ justify-content: space-between;
+ gap: 1rem;
+  list-style: none;
+  font-size: 1.3rem;
 
 }
 
-.logo-label {
-	font-size: 2rem;
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+/*Make the navigation items white (fully opaque) on hover state*/
+.nav a:hover {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.video-section {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+}
+
+#hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 3px 3px 15px rgba(0,0,0,0.8);
+}
+
+#toggle-video {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 14px 36px;
+  font-size: 1.1rem;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#toggle-video:hover { background: rgba(0,0,0,0.8); }
+
+
+.section {
+  padding: 4rem 5%;
+  text-align: center;
+}
+
+.audio-section { background: #f8f9fa; }
+.canvas-section { background: #ecf0f1; }
+.grid-section { background: #ffffff; }
+
+
+.color-picker {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.color-picker button {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.color-picker button:hover { transform: scale(1.1); }
+
+
+#drawing-canvas {
+  border: 4px solid #34495e;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 
-ul {
-	display: flex;
-	list-style-type: none;
-	gap: 2.5rem;
-
-
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
 }
 
-nav ul li a{
-	font-size: 1.5rem;
-	color: black;
-	transition: all 0.3s ease;
-	cursor: pointer;
-	text-decoration: none;
+.card {
+  background: #064d7c;
+  color: white;
+  padding: 50px;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
 }
 
-nav ul li a:hover {
-	color: red;
+.card:hover { transform: translateY(-10px); }
 
+#add-card, #clear-canvas, #toggle-audio {
+  margin-top: 20px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  background: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-/*main content */
+#add-card:hover, #clear-canvas:hover, #toggle-audio:hover {
+  background: #27ae60;
+}
 
-main {
-	margin: 0 auto;
-	max-width: 1200px;
-	padding: 1rem;
+.footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 2.5rem;
+  margin-top: 5rem;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 992px) {
+  .grid-container { grid-template-columns: repeat(2, 1fr); }
+  .overlay { font-size: 4rem; }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem 5%;
+  }
+  .nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .overlay { font-size: 2.2rem; }
 }
 
 
+/*Write the media query code for all devices with less than 546px width
+Set only one column for Card Grid
+Decrease the overlay font to 1.8 rem
+Decrease the canvas width
+*/
 
-.main-content-article h2{
-	color: red;
-	font-size: 2rem;
-	margin-bottom: 1rem;
+@media (max-width: 546px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
 
+  #drawing-canvas {
+    width: 90%;
+  }
+
+  .overlay {
+    font-size: 1.8rem;
+  }
 }
-
-.main-content-article p{
-	font-size: 1.5rem;
-	line-height: 1.5;
-	margin-bottom: 1rem;
-
-}
-
-
