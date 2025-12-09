@@ -2,33 +2,51 @@
   "movies": [
     {
       "id": "2",
-      "title": "hdjsahdjsdhsjd",
-      "year": 6736172,
-      "genre": "sghhjasgsad"
+      "title": "The Dark Knight",
+      "genre": "Action",
+      "year": 2008
     },
     {
       "id": "3",
-      "title": "Dune",
+      "title": "Interstellar",
       "genre": "Sci-Fi",
-      "year": 2021
+      "year": 2014
     },
     {
-      "id": "29a4",
-      "title": "jhghjghjg",
-      "genre": "dsaadad121",
-      "year": 2121
+      "id": "4",
+      "title": "Pulp Fiction",
+      "genre": "Crime",
+      "year": 1994
     },
     {
-      "id": "65c0",
-      "title": "dsdsd",
-      "genre": "dsdsd",
-      "year": 2323
+      "id": "5",
+      "title": "The Matrix",
+      "genre": "Sci-Fi",
+      "year": 1999
     },
     {
-      "id": "f9a5",
-      "title": "jjshsd",
-      "genre": "dsdsd",
-      "year": 1920
+      "id": "6",
+      "title": "Forrest Gump",
+      "genre": "Drama",
+      "year": 1994
+    },
+    {
+      "id": "7",
+      "title": "The Godfather",
+      "genre": "Crime",
+      "year": 1972
+    },
+    {
+      "id": "8",
+      "title": "Fight Club",
+      "genre": "Drama",
+      "year": 1999
+    },
+    {
+      "id": "9",
+      "title": "Gladiator",
+      "genre": "Action",
+      "year": 2000
     }
   ]
 }
